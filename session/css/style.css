@@ -1,0 +1,309 @@
+/*!
+global > color
+------------------------------
+*/
+:root {
+    --color-base: #4c566a;
+    --color-placeholder: #bfc6d3;
+    --color-border: #d8dee9;
+    --color-border-dark: #5e81ac;
+    --color-white: #fff;
+    --color-link: #4d76a7;
+}
+
+/*!
+foundation > reset
+------------------------------
+*/
+html {
+    color: #000;
+    background: #fff;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+caption,
+th {
+    text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+q:before,
+q:after {
+    content: "";
+}
+
+abbr,
+acronym {
+    border: 0;
+    font-variant: normal;
+}
+
+sup {
+    vertical-align: text-top;
+}
+
+sub {
+    vertical-align: text-bottom;
+}
+
+input,
+textarea,
+select,
+button {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    font-size: 100%;
+    border-radius: 0;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: inherit;
+}
+
+input,
+textarea,
+select {
+    font-size: inherit;
+}
+
+textarea {
+    resize: vertical;
+    display: block;
+}
+
+button {
+    padding: 0;
+    cursor: pointer;
+}
+
+legend {
+    color: inherit;
+}
+
+tbody {
+    -webkit-text-size-adjust: 100%;
+}
+
+main {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+svg {
+    display: block;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*!
+foundation > base
+------------------------------
+*/
+body {
+    line-height: 1.7;
+    font-size: 16px;
+    color: var(--color-base);
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+/*!
+layout > container
+------------------------------
+*/
+.container {
+    width: min(90%, 760px);
+    margin-inline: auto;
+    padding: 80px 0;
+}
+
+/*!
+common
+------------------------------
+*/
+.c-title {
+    font-size: 28px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.c-link {
+    display: inline-block;
+    text-decoration: underline;
+    color: var(--color-link);
+}
+
+/*!
+top
+------------------------------
+*/
+.top-posts {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px 16px;
+    margin-top: 64px;
+}
+
+@media (min-width: 768px) {
+    .top-posts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.top-post-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+/*!
+post
+------------------------------
+*/
+.post {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.post-to-top {
+    display: inline-block;
+    margin-inline: auto;
+}
+
+/* モーダル */
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    overscroll-behavior: none;
+    border: none;
+    color: inherit;
+}
+
+.modal::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-contents {
+    background-color: var(--color-white);
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.modal-close-button {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    z-index: 102;
+    background-color: #eceff4;
+    font-size: 14px;
+    padding: 4px 12px;
+    font-weight: bold;
+}
